@@ -1,0 +1,133 @@
+- Mini Twitter V1
+    - SDI
+        - Требование
+            - Определения
+                - friends => те кого я follow
+            - Функциональные
+                - Post
+                    - length (120)
+                    - text only
+                    - #hash 
+                    - publish_at 
+                    - // acl  , access control list
+                        - friends/followers ... 
+                        - 
+                    - // geo (v2)
+                    - //retweet (v2)
+                        - with message
+                        - // without message (bare)
+                    - display one tweet + deps (reply )
+                    - create/read, невозможно редактировать
+                    - удаление 
+                        - reply (остаются) 
+                        - favorites удаляются 
+                    - mention @user  
+                - Timeline
+                    - post, reply, mention ... 
+                    - profile 
+                        - bio, gravatar (email), 
+                - Hot trends (hash tag)
+                    - global 
+                    - (for user)  
+                    - // area ?
+                    - // (among followers) v2
+                - User
+                    - register/restore  
+                    - // block ? (readonly, delete, warning)
+                    - // 2fa ?
+                    - // oauth  v2
+                    - avatar (gravatar)
+                    - statistics 
+                        - total : tweets / reply / favorites
+                        - total: views of timeline
+                - Follow (public )
+                    - //lists
+                        - notification ??
+                        - get/timeline/list_1
+                - Reply
+                    - обычный post user , origin_id
+                - Favorites (private)
+                    - get_myFavorites
+                - Notification
+                    - reply 
+                    - mention
+                    - follower
+                    - // direct message
+                    - // push (v2)
+                - settings
+                    - // notification  
+                        - by type  ? 
+                        - channel ?
+                    - //privacy 
+                        - blocked user (direct prohibited)
+                        - //direct messages ?
+                            - all / friends
+                        - // кто может видеть моих friends/followers
+                - direct messages
+                    - модель inbox/outbox 
+                    - возможность удалить свои/чужие
+                - restriction list 
+                    - list of users 
+                        - 1. they can't reply to my tweets
+                        - 2. they can't send message
+                        - 3. they can't see my posts
+                - rate-limiter
+                    - // push 
+                        - 100/s 
+                        - 500/1y 
+                    - api  
+                    - business restrictions (нужен пример)  
+                        - follow  <= 1000
+                - search
+                    - hashtag 
+                    - // full-text (?)
+                - Pages:
+                    - home ( твиты тех на кого я подписан)
+                    - timeline user   (timeline/user1 )
+                    - tweet_id  .. 
+                    - notifications (list of events)
+                    - settings
+                    - direct messages (list)
+                    - search
+                - Front API:
+                    - ws api (v1.5)
+                    - http rest (v1.5)
+                    - cli api (dark theme)
+            - Нефункциональные
+                - Time render of timeline 10ms 
+                - Tweet потерять не можем
+                - 1s delay of new tweets
+                - ... (?)
+        - Scale
+            - 200,000,000 user
+            - read  1e4/user
+            - writes  10/user
+            - favorites  100/day/user
+        - API
+            - post tweet (... ) arg?
+                - CRUD  (delete ?, edit ?,   read !, create !)
+            - send message ( ) arg ...?
+            - getTweet (id ?)
+            - getTimeline (user?)   
+            - follow ?
+            - Favorite ... ?
+            - auth (JWT .. ) 
+        - Общая схема
+            -  функционально .
+        - Data model
+            - Relation db ? nosql ? +/- 
+                - schema ?
+                    - table User (....) 
+                - nosql ?
+                    - document ? 
+                    - 
+        - Детальная схема (...)
+            - ...
+    - ДЗ
+        -  29/01
+            - Дополнить функциональных требованиях. 
+            - Расписать API (  getTweet ( id, arg) ... )
+            - Data model 
+                - User (id, name, password ) ...
+            - прислать это пулреквестом к этому списком
+            - 
